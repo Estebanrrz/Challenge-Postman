@@ -1,0 +1,1159 @@
+{
+	"id": "0b1a05ee-fb6b-4806-8fd4-909a89738dc6",
+	"name": "Users",
+	"timestamp": "2023-05-21T22:47:34.367Z",
+	"collection_id": "4190699-744a6ae2-453f-4c12-a655-554ee9daf3a9",
+	"folder_id": 0,
+	"environment_id": "4190699-1bcaf483-08f5-4d69-aa29-fce6e09e1729",
+	"totalPass": 89,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2023-05-21T22:47:21.131Z",
+	"totalFail": 1,
+	"results": [
+		{
+			"id": "96093be1-7868-415b-bdbd-43f6041e41d4",
+			"name": "Users",
+			"url": "https://gorest.co.in/public/v2/users",
+			"time": 1312,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 500ms": false,
+				"Content application/json; charset=utf-8-Type is present": true,
+				"Validate keys for each object are the expected": true,
+				"Validate response is an array": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 500ms": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Content application/json; charset=utf-8-Type is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validate keys for each object are the expected": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validate response is an array": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1312
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 500ms": false,
+					"Content application/json; charset=utf-8-Type is present": true,
+					"Validate keys for each object are the expected": true,
+					"Validate response is an array": true
+				}
+			]
+		},
+		{
+			"id": "0e5ec518-712a-470e-9e97-a28b2557da5d",
+			"name": "Users By Name Positive",
+			"url": "https://gorest.co.in/public/v2/users?name=ERR",
+			"time": 444,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 500ms": true,
+				"Content application/json; charset=utf-8-Type is present": true,
+				"Validate keys for each object are the expected": true,
+				"Validate response is an array": true,
+				"response contains the expected name": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 500ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content application/json; charset=utf-8-Type is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validate keys for each object are the expected": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validate response is an array": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response contains the expected name": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				444
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 500ms": true,
+					"Content application/json; charset=utf-8-Type is present": true,
+					"Validate keys for each object are the expected": true,
+					"Validate response is an array": true,
+					"response contains the expected name": true
+				}
+			]
+		},
+		{
+			"id": "f989af98-918f-4849-8340-e015fc817480",
+			"name": "Users By Gender Positive",
+			"url": "https://gorest.co.in/public/v2/users?gender=female",
+			"time": 479,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 500ms": true,
+				"Content application/json; charset=utf-8-Type is present": true,
+				"Validate keys for each object are the expected": true,
+				"Validate response is an array": true,
+				"Validate Gender for each object is the expected": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 500ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content application/json; charset=utf-8-Type is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validate keys for each object are the expected": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validate response is an array": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validate Gender for each object is the expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				479
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 500ms": true,
+					"Content application/json; charset=utf-8-Type is present": true,
+					"Validate keys for each object are the expected": true,
+					"Validate response is an array": true,
+					"Validate Gender for each object is the expected": true
+				}
+			]
+		},
+		{
+			"id": "e6efb7fd-2b85-45e1-896d-97018f4be628",
+			"name": "Users By Status Positive",
+			"url": "https://gorest.co.in/public/v2/users?status=inactive",
+			"time": 488,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 500ms": true,
+				"Content application/json; charset=utf-8-Type is present": true,
+				"Validate keys for each object are the expected": true,
+				"Validate response is an array": true,
+				"Validate status for each object is the expected": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 500ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content application/json; charset=utf-8-Type is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validate keys for each object are the expected": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validate response is an array": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validate status for each object is the expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				488
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 500ms": true,
+					"Content application/json; charset=utf-8-Type is present": true,
+					"Validate keys for each object are the expected": true,
+					"Validate response is an array": true,
+					"Validate status for each object is the expected": true
+				}
+			]
+		},
+		{
+			"id": "a947fabe-5770-4eaf-af05-6a6b17301274",
+			"name": "Users By Id Positive",
+			"url": "https://gorest.co.in/public/v2/users?id=1980601",
+			"time": 424,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 500ms": true,
+				"Content application/json; charset=utf-8-Type is present": true,
+				"Validate keys for each object are the expected": true,
+				"response contains the expected name": true,
+				"Validate response is an array": true,
+				"There is only one  user with id": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 500ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content application/json; charset=utf-8-Type is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validate keys for each object are the expected": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response contains the expected name": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validate response is an array": {
+					"pass": 1,
+					"fail": 0
+				},
+				"There is only one  user with id": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				424
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 500ms": true,
+					"Content application/json; charset=utf-8-Type is present": true,
+					"Validate keys for each object are the expected": true,
+					"response contains the expected name": true,
+					"Validate response is an array": true,
+					"There is only one  user with id": true
+				}
+			]
+		},
+		{
+			"id": "6db0d917-ccbe-4eba-b3b2-aeece92a1832",
+			"name": "Users By Email Positive",
+			"url": "https://gorest.co.in/public/v2/users?email=Orpha.Thiel@hotmail.com",
+			"time": 456,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 500ms": true,
+				"Content application/json; charset=utf-8-Type is present": true,
+				"Validate keys for each object are the expected": true,
+				"Validate response is an array": true,
+				"response contains the expected name": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 500ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content application/json; charset=utf-8-Type is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validate keys for each object are the expected": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validate response is an array": {
+					"pass": 1,
+					"fail": 0
+				},
+				"response contains the expected name": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				456
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 500ms": true,
+					"Content application/json; charset=utf-8-Type is present": true,
+					"Validate keys for each object are the expected": true,
+					"Validate response is an array": true,
+					"response contains the expected name": true
+				}
+			]
+		},
+		{
+			"id": "826c67d8-4f79-4a8b-82d9-5af60b2c11ca",
+			"name": "Users By Name Negative",
+			"url": "https://gorest.co.in/public/v2/users?name=xxxx",
+			"time": 435,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 500ms": true,
+				"Content application/json; charset=utf-8-Type is present": true,
+				"Validate keys for each object are the expected": true,
+				"Validate response is an array": true,
+				"Verify body contains an empty array": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 500ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content application/json; charset=utf-8-Type is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validate keys for each object are the expected": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validate response is an array": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Verify body contains an empty array": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				435
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 500ms": true,
+					"Content application/json; charset=utf-8-Type is present": true,
+					"Validate keys for each object are the expected": true,
+					"Validate response is an array": true,
+					"Verify body contains an empty array": true
+				}
+			]
+		},
+		{
+			"id": "6597a5aa-1d27-42c9-b624-62ab2c974001",
+			"name": "Users By Id Negative",
+			"url": "https://gorest.co.in/public/v2/users?id=xxxx",
+			"time": 417,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 500ms": true,
+				"Content application/json; charset=utf-8-Type is present": true,
+				"Validate keys for each object are the expected": true,
+				"Validate response is an array": true,
+				"Verify body contains an empty array": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 500ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content application/json; charset=utf-8-Type is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validate keys for each object are the expected": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validate response is an array": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Verify body contains an empty array": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				417
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 500ms": true,
+					"Content application/json; charset=utf-8-Type is present": true,
+					"Validate keys for each object are the expected": true,
+					"Validate response is an array": true,
+					"Verify body contains an empty array": true
+				}
+			]
+		},
+		{
+			"id": "ba1d3c7f-9a40-4477-874b-5a9426d9cfe9",
+			"name": "Users By Email Negative",
+			"url": "https://gorest.co.in/public/v2/users?email=xxxx",
+			"time": 422,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 500ms": true,
+				"Content application/json; charset=utf-8-Type is present": true,
+				"Validate keys for each object are the expected": true,
+				"Validate response is an array": true,
+				"Verify body contains an empty array": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 500ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content application/json; charset=utf-8-Type is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validate keys for each object are the expected": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validate response is an array": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Verify body contains an empty array": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				422
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 500ms": true,
+					"Content application/json; charset=utf-8-Type is present": true,
+					"Validate keys for each object are the expected": true,
+					"Validate response is an array": true,
+					"Verify body contains an empty array": true
+				}
+			]
+		},
+		{
+			"id": "f2103768-7400-4acd-96e2-1128da7e5e42",
+			"name": "Users By Gender Negative",
+			"url": "https://gorest.co.in/public/v2/users?gender=xxxx",
+			"time": 420,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 500ms": true,
+				"Content application/json; charset=utf-8-Type is present": true,
+				"Validate keys for each object are the expected": true,
+				"Validate response is an array": true,
+				"Verify body contains an empty array": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 500ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content application/json; charset=utf-8-Type is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validate keys for each object are the expected": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validate response is an array": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Verify body contains an empty array": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				420
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 500ms": true,
+					"Content application/json; charset=utf-8-Type is present": true,
+					"Validate keys for each object are the expected": true,
+					"Validate response is an array": true,
+					"Verify body contains an empty array": true
+				}
+			]
+		},
+		{
+			"id": "5f3dd5a2-162c-49c7-8d11-d733e61207b1",
+			"name": "Users By Status Negative",
+			"url": "https://gorest.co.in/public/v2/users?status=xxxx",
+			"time": 432,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 500ms": true,
+				"Content application/json; charset=utf-8-Type is present": true,
+				"Validate keys for each object are the expected": true,
+				"Validate response is an array": true,
+				"Verify body contains an empty array": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 500ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content application/json; charset=utf-8-Type is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validate keys for each object are the expected": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Validate response is an array": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Verify body contains an empty array": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				432
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 500ms": true,
+					"Content application/json; charset=utf-8-Type is present": true,
+					"Validate keys for each object are the expected": true,
+					"Validate response is an array": true,
+					"Verify body contains an empty array": true
+				}
+			]
+		},
+		{
+			"id": "1c69ea49-e969-44f7-8aa9-780ff148764d",
+			"name": "Create user",
+			"url": "https://gorest.co.in/public/v2/users",
+			"time": 436,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Successful POST request": true,
+				"Response time is less than 200ms": true,
+				"Verify  User Data created": true
+			},
+			"testPassFailCounts": {
+				"Successful POST request": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Verify  User Data created": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				436
+			],
+			"allTests": [
+				{
+					"Successful POST request": true,
+					"Response time is less than 200ms": true,
+					"Verify  User Data created": true
+				}
+			]
+		},
+		{
+			"id": "3595c9cf-f60f-452d-9f83-c424657fdd2a",
+			"name": "Create user  negative bad body format",
+			"url": "https://gorest.co.in/public/v2/users",
+			"time": 357,
+			"responseCode": {
+				"code": 401,
+				"name": "Unauthorized"
+			},
+			"tests": {
+				"Status code is 401": true,
+				"Response time is less than 200ms": true,
+				"Verify body Error": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Verify body Error": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				357
+			],
+			"allTests": [
+				{
+					"Status code is 401": true,
+					"Response time is less than 200ms": true,
+					"Verify body Error": true
+				}
+			]
+		},
+		{
+			"id": "92b9f8c3-89b0-4fff-9faa-8a393fb7673e",
+			"name": "Verify  user Created",
+			"url": "https://gorest.co.in/public/v2/users/1982294",
+			"time": 408,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Your test name": true
+			},
+			"testPassFailCounts": {
+				"Your test name": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				408
+			],
+			"allTests": [
+				{
+					"Your test name": true
+				}
+			]
+		},
+		{
+			"id": "3d2e27e4-b30f-4caf-b530-7226e06ff282",
+			"name": "Create user  duplicate email negative",
+			"url": "https://gorest.co.in/public/v2/users",
+			"time": 408,
+			"responseCode": {
+				"code": 422,
+				"name": "Unprocessable Entity"
+			},
+			"tests": {
+				"Successful POST request": true,
+				"Response time is less than 200ms": true,
+				"Verify Email duplicate error": true
+			},
+			"testPassFailCounts": {
+				"Successful POST request": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Verify Email duplicate error": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				408
+			],
+			"allTests": [
+				{
+					"Successful POST request": true,
+					"Response time is less than 200ms": true,
+					"Verify Email duplicate error": true
+				}
+			]
+		},
+		{
+			"id": "0481f1b6-ea41-4348-a5ab-7dce9df04c96",
+			"name": "Status blank negative",
+			"url": "https://gorest.co.in/public/v2/users",
+			"time": 429,
+			"responseCode": {
+				"code": 422,
+				"name": "Unprocessable Entity"
+			},
+			"tests": {
+				"Successful POST request": true,
+				"Response time is less than 200ms": true,
+				"Verify  status Error": true
+			},
+			"testPassFailCounts": {
+				"Successful POST request": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Verify  status Error": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				429
+			],
+			"allTests": [
+				{
+					"Successful POST request": true,
+					"Response time is less than 200ms": true,
+					"Verify  status Error": true
+				}
+			]
+		},
+		{
+			"id": "70eaa9f0-21cb-49b2-9098-5df1bcc8521f",
+			"name": "Gender negative",
+			"url": "https://gorest.co.in/public/v2/users",
+			"time": 429,
+			"responseCode": {
+				"code": 422,
+				"name": "Unprocessable Entity"
+			},
+			"tests": {
+				"Successful POST request": true,
+				"Response time is less than 200ms": true,
+				"Verify Gender different to  male of female": true
+			},
+			"testPassFailCounts": {
+				"Successful POST request": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Verify Gender different to  male of female": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				429
+			],
+			"allTests": [
+				{
+					"Successful POST request": true,
+					"Response time is less than 200ms": true,
+					"Verify Gender different to  male of female": true
+				}
+			]
+		},
+		{
+			"id": "152dbada-3855-430c-9d4d-ae2e540c593e",
+			"name": "Empty Body Json Negative",
+			"url": "https://gorest.co.in/public/v2/users",
+			"time": 410,
+			"responseCode": {
+				"code": 422,
+				"name": "Unprocessable Entity"
+			},
+			"tests": {
+				"Successful POST request": true,
+				"Response time is less than 200ms": true,
+				"Verify emty body Error": true
+			},
+			"testPassFailCounts": {
+				"Successful POST request": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Verify emty body Error": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				410
+			],
+			"allTests": [
+				{
+					"Successful POST request": true,
+					"Response time is less than 200ms": true,
+					"Verify emty body Error": true
+				}
+			]
+		},
+		{
+			"id": "d104138b-4c84-4f8f-887d-7d15e1309b89",
+			"name": "Created user",
+			"url": "https://gorest.co.in/public/v2/users",
+			"time": 443,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Successful POST request": true
+			},
+			"testPassFailCounts": {
+				"Successful POST request": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				443
+			],
+			"allTests": [
+				{
+					"Successful POST request": true
+				}
+			]
+		},
+		{
+			"id": "aca17fb4-fad4-4017-a9c6-9c484d1ea153",
+			"name": "Update User",
+			"url": "https://gorest.co.in/public/v2/users/1982297",
+			"time": 390,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				390
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "7f31706a-fc89-4054-b386-ca14b2d2d037",
+			"name": "Verify user was  Modified",
+			"url": "https://gorest.co.in/public/v2/users/1982297",
+			"time": 420,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"verify data is updated": true
+			},
+			"testPassFailCounts": {
+				"verify data is updated": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				420
+			],
+			"allTests": [
+				{
+					"verify data is updated": true
+				}
+			]
+		},
+		{
+			"id": "3a1e23b5-e500-4aea-8a2a-c6694a95c6a3",
+			"name": "Created user",
+			"url": "https://gorest.co.in/public/v2/users",
+			"time": 435,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				435
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "a0691597-e97e-42e9-aff1-8f33aed80772",
+			"name": "Delete User",
+			"url": "https://gorest.co.in/public/v2/users/1982299",
+			"time": 426,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content"
+			},
+			"tests": {
+				"Status code is 204": true
+			},
+			"testPassFailCounts": {
+				"Status code is 204": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				426
+			],
+			"allTests": [
+				{
+					"Status code is 204": true
+				}
+			]
+		},
+		{
+			"id": "3e550ffa-bf20-4080-b3b3-b098ed41dc3a",
+			"name": "Verify user was delete",
+			"url": "https://gorest.co.in/public/v2/users/1982299",
+			"time": 398,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Your test name": true
+			},
+			"testPassFailCounts": {
+				"Your test name": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				398
+			],
+			"allTests": [
+				{
+					"Your test name": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 11118,
+	"collection": {
+		"requests": [
+			{
+				"id": "96093be1-7868-415b-bdbd-43f6041e41d4",
+				"method": "GET"
+			},
+			{
+				"id": "0e5ec518-712a-470e-9e97-a28b2557da5d",
+				"method": "GET"
+			},
+			{
+				"id": "f989af98-918f-4849-8340-e015fc817480",
+				"method": "GET"
+			},
+			{
+				"id": "e6efb7fd-2b85-45e1-896d-97018f4be628",
+				"method": "GET"
+			},
+			{
+				"id": "a947fabe-5770-4eaf-af05-6a6b17301274",
+				"method": "GET"
+			},
+			{
+				"id": "6db0d917-ccbe-4eba-b3b2-aeece92a1832",
+				"method": "GET"
+			},
+			{
+				"id": "826c67d8-4f79-4a8b-82d9-5af60b2c11ca",
+				"method": "GET"
+			},
+			{
+				"id": "6597a5aa-1d27-42c9-b624-62ab2c974001",
+				"method": "GET"
+			},
+			{
+				"id": "ba1d3c7f-9a40-4477-874b-5a9426d9cfe9",
+				"method": "GET"
+			},
+			{
+				"id": "f2103768-7400-4acd-96e2-1128da7e5e42",
+				"method": "GET"
+			},
+			{
+				"id": "5f3dd5a2-162c-49c7-8d11-d733e61207b1",
+				"method": "GET"
+			},
+			{
+				"id": "1c69ea49-e969-44f7-8aa9-780ff148764d",
+				"method": "POST"
+			},
+			{
+				"id": "3595c9cf-f60f-452d-9f83-c424657fdd2a",
+				"method": "POST"
+			},
+			{
+				"id": "92b9f8c3-89b0-4fff-9faa-8a393fb7673e",
+				"method": "GET"
+			},
+			{
+				"id": "3d2e27e4-b30f-4caf-b530-7226e06ff282",
+				"method": "POST"
+			},
+			{
+				"id": "0481f1b6-ea41-4348-a5ab-7dce9df04c96",
+				"method": "POST"
+			},
+			{
+				"id": "70eaa9f0-21cb-49b2-9098-5df1bcc8521f",
+				"method": "POST"
+			},
+			{
+				"id": "152dbada-3855-430c-9d4d-ae2e540c593e",
+				"method": "POST"
+			},
+			{
+				"id": "d104138b-4c84-4f8f-887d-7d15e1309b89",
+				"method": "POST"
+			},
+			{
+				"id": "aca17fb4-fad4-4017-a9c6-9c484d1ea153",
+				"method": "PUT"
+			},
+			{
+				"id": "7f31706a-fc89-4054-b386-ca14b2d2d037",
+				"method": "GET"
+			},
+			{
+				"id": "3a1e23b5-e500-4aea-8a2a-c6694a95c6a3",
+				"method": "POST"
+			},
+			{
+				"id": "a0691597-e97e-42e9-aff1-8f33aed80772",
+				"method": "DELETE"
+			},
+			{
+				"id": "3e550ffa-bf20-4080-b3b3-b098ed41dc3a",
+				"method": "GET"
+			}
+		]
+	}
+}
