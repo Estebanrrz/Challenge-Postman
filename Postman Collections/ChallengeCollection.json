@@ -1,0 +1,1671 @@
+{
+	"info": {
+		"_postman_id": "744a6ae2-453f-4c12-a655-554ee9daf3a9",
+		"name": "Users",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET",
+			"item": [
+				{
+					"name": "Users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c96c53ad-3d8d-4787-9ed1-5b76a7feeb37",
+								"exec": [
+									"const answerArray = pm.response.json();\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 500ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+									"});\r",
+									"pm.test(\"Content application/json; charset=utf-8-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\",\"application/json; charset=utf-8\");\r",
+									"});\r",
+									"\r",
+									"// Define the expected keys for each object\r",
+									"const expectedKeys = ['id', 'name', 'email','gender','status'];\r",
+									"\r",
+									"// Iterate through each object in the array and validate the keys\r",
+									"pm.test('Validate keys for each object are the expected', function () {\r",
+									"    answerArray.forEach(function (answer) {\r",
+									"        const actualKeys = Object.keys(answer);\r",
+									"        pm.expect(actualKeys).to.eql(expectedKeys);\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"// Check if the response body is an array\r",
+									"pm.test('Validate response is an array', function () {\r",
+									"    pm.expect(answerArray).to.be.an('array');\r",
+									"});\r",
+									"console.log(answerArray[1].name);\r",
+									"// Saving Variables to use in other requests\r",
+									"pm.collectionVariables.set(\"name\", answerArray[1].name);\r",
+									"pm.collectionVariables.set(\"id\", answerArray[0].id);\r",
+									"pm.collectionVariables.set(\"email\", answerArray[0].email);\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "96093be1-7868-415b-bdbd-43f6041e41d4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/users"
+					},
+					"response": []
+				},
+				{
+					"name": "Users By Name Positive",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3b6bb191-6af3-4ac0-af26-a66bd839f04f",
+								"exec": [
+									"const answerArray = pm.response.json();\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 500ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+									"});\r",
+									"pm.test(\"Content application/json; charset=utf-8-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\",\"application/json; charset=utf-8\");\r",
+									"});\r",
+									"\r",
+									"// Define the expected keys for each object\r",
+									"const expectedKeys = ['id', 'name', 'email','gender','status'];\r",
+									"\r",
+									"// Iterate through each object in the array and validate the keys\r",
+									"pm.test('Validate keys for each object are the expected', function () {\r",
+									"    answerArray.forEach(function (answer) {\r",
+									"        const actualKeys = Object.keys(answer);\r",
+									"        pm.expect(actualKeys).to.eql(expectedKeys);\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"// Check if the response body is an array\r",
+									"pm.test('Validate response is an array', function () {\r",
+									"    pm.expect(answerArray).to.be.an('array');\r",
+									"});\r",
+									"const name = pm.collectionVariables.get(\"name\")\r",
+									"pm.test(\"response contains the expected name\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[0].name).to.eql(name);\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "a8329aac-9c48-47fb-90fa-80267b3db013",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "0e5ec518-712a-470e-9e97-a28b2557da5d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users?name={{name}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "{{name}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Users By Gender Positive",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3b6bb191-6af3-4ac0-af26-a66bd839f04f",
+								"exec": [
+									"const answerArray = pm.response.json();\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 500ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+									"});\r",
+									"pm.test(\"Content application/json; charset=utf-8-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\",\"application/json; charset=utf-8\");\r",
+									"});\r",
+									"\r",
+									"// Define the expected keys for each object\r",
+									"const expectedKeys = ['id', 'name', 'email','gender','status'];\r",
+									"\r",
+									"// Iterate through each object in the array and validate the keys\r",
+									"pm.test('Validate keys for each object are the expected', function () {\r",
+									"    answerArray.forEach(function (answer) {\r",
+									"        const actualKeys = Object.keys(answer);\r",
+									"        pm.expect(actualKeys).to.eql(expectedKeys);\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"// Check if the response body is an array\r",
+									"pm.test('Validate response is an array', function () {\r",
+									"    pm.expect(answerArray).to.be.an('array');\r",
+									"});\r",
+									"\r",
+									"\r",
+									"// Verify all the objects have the expected gender\r",
+									"const gender = pm.collectionVariables.get(\"gender\")\r",
+									"pm.test('Validate Gender for each object is the expected', function () {\r",
+									"    answerArray.forEach(function (answer) {\r",
+									"        pm.expect(answer.gender).to.eql(gender);\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "a8329aac-9c48-47fb-90fa-80267b3db013",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "f989af98-918f-4849-8340-e015fc817480",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users?gender={{gender}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "gender",
+									"value": "{{gender}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Users By Status Positive",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e79b2bff-87ba-4f46-bd1f-a1b3f9671515",
+								"exec": [
+									"const answerArray = pm.response.json();\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 500ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+									"});\r",
+									"pm.test(\"Content application/json; charset=utf-8-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\",\"application/json; charset=utf-8\");\r",
+									"});\r",
+									"\r",
+									"// Define the expected keys for each object\r",
+									"const expectedKeys = ['id', 'name', 'email','gender','status'];\r",
+									"\r",
+									"// Iterate through each object in the array and validate the keys\r",
+									"pm.test('Validate keys for each object are the expected', function () {\r",
+									"    answerArray.forEach(function (answer) {\r",
+									"        const actualKeys = Object.keys(answer);\r",
+									"        pm.expect(actualKeys).to.eql(expectedKeys);\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"// Check if the response body is an array\r",
+									"pm.test('Validate response is an array', function () {\r",
+									"    pm.expect(answerArray).to.be.an('array');\r",
+									"});\r",
+									"\r",
+									"// Verify all the objects have the expected Status\r",
+									"pm.test('Validate status for each object is the expected', function () {\r",
+									"    const status = pm.collectionVariables.get(\"status\")\r",
+									"    answerArray.forEach(function (answer) {\r",
+									"        pm.expect(answer.status).to.eql(status);\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "d3fd958d-b287-412d-956d-d477f0479322",
+								"exec": [
+									"pm.collectionVariables.set(\"status\", \"inactive\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "e6efb7fd-2b85-45e1-896d-97018f4be628",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users?status={{status}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "{{status}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Users By Id Positive",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d0d1470c-6bdb-4b02-8aaa-f241fea1bf8c",
+								"exec": [
+									"const answerArray = pm.response.json();\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 500ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+									"});\r",
+									"pm.test(\"Content application/json; charset=utf-8-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\",\"application/json; charset=utf-8\");\r",
+									"});\r",
+									"\r",
+									"// Define the expected keys for each object\r",
+									"const expectedKeys = ['id', 'name', 'email','gender','status'];\r",
+									"\r",
+									"// Iterate through each object in the array and validate the keys\r",
+									"pm.test('Validate keys for each object are the expected', function () {\r",
+									"    answerArray.forEach(function (answer) {\r",
+									"        const actualKeys = Object.keys(answer);\r",
+									"        pm.expect(actualKeys).to.eql(expectedKeys);\r",
+									"    });\r",
+									"});\r",
+									"const id =pm.collectionVariables.get(\"id\")\r",
+									"pm.test(\"response contains the expected name\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[0].id).to.eql(id);\r",
+									"});\r",
+									"\r",
+									"// Check if the response body is an array\r",
+									"pm.test('Validate response is an array', function () {\r",
+									"    pm.expect(answerArray).to.be.an('array');\r",
+									"});\r",
+									"\r",
+									"\r",
+									"//Verify there is only one user with the id\r",
+									"pm.test(\"There is only one  user with id\", function () {\r",
+									"pm.expect(answerArray).to.have.lengthOf(1);\r",
+									"});\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "a7b168d9-7e71-4f3d-802e-7779158c3b6f",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "a947fabe-5770-4eaf-af05-6a6b17301274",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users?id={{id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "{{id}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Users By Email Positive",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3b6bb191-6af3-4ac0-af26-a66bd839f04f",
+								"exec": [
+									"const answerArray = pm.response.json();\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 500ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+									"});\r",
+									"pm.test(\"Content application/json; charset=utf-8-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\",\"application/json; charset=utf-8\");\r",
+									"});\r",
+									"\r",
+									"// Define the expected keys for each object\r",
+									"const expectedKeys = ['id', 'name', 'email','gender','status'];\r",
+									"\r",
+									"// Iterate through each object in the array and validate the keys\r",
+									"pm.test('Validate keys for each object are the expected', function () {\r",
+									"    answerArray.forEach(function (answer) {\r",
+									"        const actualKeys = Object.keys(answer);\r",
+									"        pm.expect(actualKeys).to.eql(expectedKeys);\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"// Check if the response body is an array\r",
+									"pm.test('Validate response is an array', function () {\r",
+									"    pm.expect(answerArray).to.be.an('array');\r",
+									"});\r",
+									"\r",
+									"const email = pm.collectionVariables.get(\"email\")\r",
+									"pm.test(\"response contains the expected name\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[0].email).to.eql(email);\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "a8329aac-9c48-47fb-90fa-80267b3db013",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "6db0d917-ccbe-4eba-b3b2-aeece92a1832",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users?email={{email}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "{{email}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Users By Name Negative",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3b6bb191-6af3-4ac0-af26-a66bd839f04f",
+								"exec": [
+									"const answerArray = pm.response.json();\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 500ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+									"});\r",
+									"pm.test(\"Content application/json; charset=utf-8-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\",\"application/json; charset=utf-8\");\r",
+									"});\r",
+									"\r",
+									"// Define the expected keys for each object\r",
+									"const expectedKeys = ['id', 'name', 'email','gender','status'];\r",
+									"\r",
+									"// Iterate through each object in the array and validate the keys\r",
+									"pm.test('Validate keys for each object are the expected', function () {\r",
+									"    answerArray.forEach(function (answer) {\r",
+									"        const actualKeys = Object.keys(answer);\r",
+									"        pm.expect(actualKeys).to.eql(expectedKeys);\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"// Check if the response body is an array\r",
+									"pm.test('Validate response is an array', function () {\r",
+									"    pm.expect(answerArray).to.be.an('array');\r",
+									"});\r",
+									"\r",
+									"// Verify if the response body is an empty array\r",
+									"pm.test(\"Verify body contains an empty array\", function () {\r",
+									"    pm.expect(answerArray).to.be.an('array').and.to.be.empty;\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "a8329aac-9c48-47fb-90fa-80267b3db013",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "826c67d8-4f79-4a8b-82d9-5af60b2c11ca",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users?name=xxxx",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "xxxx"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Users By Id Negative",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3b6bb191-6af3-4ac0-af26-a66bd839f04f",
+								"exec": [
+									"const answerArray = pm.response.json();\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 500ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+									"});\r",
+									"pm.test(\"Content application/json; charset=utf-8-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\",\"application/json; charset=utf-8\");\r",
+									"});\r",
+									"\r",
+									"// Define the expected keys for each object\r",
+									"const expectedKeys = ['id', 'name', 'email','gender','status'];\r",
+									"\r",
+									"// Iterate through each object in the array and validate the keys\r",
+									"pm.test('Validate keys for each object are the expected', function () {\r",
+									"    answerArray.forEach(function (answer) {\r",
+									"        const actualKeys = Object.keys(answer);\r",
+									"        pm.expect(actualKeys).to.eql(expectedKeys);\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"// Check if the response body is an array\r",
+									"pm.test('Validate response is an array', function () {\r",
+									"    pm.expect(answerArray).to.be.an('array');\r",
+									"});\r",
+									"\r",
+									"// Verify if the response body is an empty array\r",
+									"pm.test(\"Verify body contains an empty array\", function () {\r",
+									"    pm.expect(answerArray).to.be.an('array').and.to.be.empty;\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "a8329aac-9c48-47fb-90fa-80267b3db013",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "6597a5aa-1d27-42c9-b624-62ab2c974001",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users?id=xxxx",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "xxxx"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Users By Email Negative",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3b6bb191-6af3-4ac0-af26-a66bd839f04f",
+								"exec": [
+									"const answerArray = pm.response.json();\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 500ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+									"});\r",
+									"pm.test(\"Content application/json; charset=utf-8-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\",\"application/json; charset=utf-8\");\r",
+									"});\r",
+									"\r",
+									"// Define the expected keys for each object\r",
+									"const expectedKeys = ['id', 'name', 'email','gender','status'];\r",
+									"\r",
+									"// Iterate through each object in the array and validate the keys\r",
+									"pm.test('Validate keys for each object are the expected', function () {\r",
+									"    answerArray.forEach(function (answer) {\r",
+									"        const actualKeys = Object.keys(answer);\r",
+									"        pm.expect(actualKeys).to.eql(expectedKeys);\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"// Check if the response body is an array\r",
+									"pm.test('Validate response is an array', function () {\r",
+									"    pm.expect(answerArray).to.be.an('array');\r",
+									"});\r",
+									"\r",
+									"// Verify if the response body is an empty array\r",
+									"pm.test(\"Verify body contains an empty array\", function () {\r",
+									"    pm.expect(answerArray).to.be.an('array').and.to.be.empty;\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "a8329aac-9c48-47fb-90fa-80267b3db013",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "ba1d3c7f-9a40-4477-874b-5a9426d9cfe9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users?email=xxxx",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "xxxx"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Users By Gender Negative",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3b6bb191-6af3-4ac0-af26-a66bd839f04f",
+								"exec": [
+									"const answerArray = pm.response.json();\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 500ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+									"});\r",
+									"pm.test(\"Content application/json; charset=utf-8-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\",\"application/json; charset=utf-8\");\r",
+									"});\r",
+									"\r",
+									"// Define the expected keys for each object\r",
+									"const expectedKeys = ['id', 'name', 'email','gender','status'];\r",
+									"\r",
+									"// Iterate through each object in the array and validate the keys\r",
+									"pm.test('Validate keys for each object are the expected', function () {\r",
+									"    answerArray.forEach(function (answer) {\r",
+									"        const actualKeys = Object.keys(answer);\r",
+									"        pm.expect(actualKeys).to.eql(expectedKeys);\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"// Check if the response body is an array\r",
+									"pm.test('Validate response is an array', function () {\r",
+									"    pm.expect(answerArray).to.be.an('array');\r",
+									"});\r",
+									"\r",
+									"// Verify if the response body is an empty array\r",
+									"pm.test(\"Verify body contains an empty array\", function () {\r",
+									"    pm.expect(answerArray).to.be.an('array').and.to.be.empty;\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "a8329aac-9c48-47fb-90fa-80267b3db013",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "f2103768-7400-4acd-96e2-1128da7e5e42",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users?gender=xxxx",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "gender",
+									"value": "xxxx"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Users By Status Negative",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3b6bb191-6af3-4ac0-af26-a66bd839f04f",
+								"exec": [
+									"const answerArray = pm.response.json();\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 500ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+									"});\r",
+									"pm.test(\"Content application/json; charset=utf-8-Type is present\", function () {\r",
+									"    pm.response.to.have.header(\"Content-Type\",\"application/json; charset=utf-8\");\r",
+									"});\r",
+									"\r",
+									"// Define the expected keys for each object\r",
+									"const expectedKeys = ['id', 'name', 'email','gender','status'];\r",
+									"\r",
+									"// Iterate through each object in the array and validate the keys\r",
+									"pm.test('Validate keys for each object are the expected', function () {\r",
+									"    answerArray.forEach(function (answer) {\r",
+									"        const actualKeys = Object.keys(answer);\r",
+									"        pm.expect(actualKeys).to.eql(expectedKeys);\r",
+									"    });\r",
+									"});\r",
+									"\r",
+									"// Check if the response body is an array\r",
+									"pm.test('Validate response is an array', function () {\r",
+									"    pm.expect(answerArray).to.be.an('array');\r",
+									"});\r",
+									"\r",
+									"// Verify if the response body is an empty array\r",
+									"pm.test(\"Verify body contains an empty array\", function () {\r",
+									"    pm.expect(answerArray).to.be.an('array').and.to.be.empty;\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "a8329aac-9c48-47fb-90fa-80267b3db013",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "5f3dd5a2-162c-49c7-8d11-d733e61207b1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users?status=xxxx",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "xxxx"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"_postman_id": "5ebbeb90-f056-4694-a59b-e338834c1b82",
+			"auth": {
+				"type": "bearer",
+				"bearer": {
+					"token": "c12de6cd664d4150a460a612489c0d39fe29d77f54661f8014087ebeeec63271"
+				}
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "fe42c8d8-b51e-4194-97e4-984756770967",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "cadeebf5-7a34-4c86-af14-494c05822051",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "POST",
+			"item": [
+				{
+					"name": "Create user",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "acac8f6d-a5ea-4469-a193-fa98b0626bf1",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "82e3b56e-35a3-4ccf-90ca-3a8a9e54c0ac",
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Verify  User Data created\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.name).to.eql(\"ERR\");\r",
+									"    pm.expect(jsonData.status).to.eql(\"active\");\r",
+									"    pm.expect(jsonData.gender).to.eql(\"female\");\r",
+									"    pm.collectionVariables.set(\"userId\", jsonData.id);\r",
+									" });\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "1c69ea49-e969-44f7-8aa9-780ff148764d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "c12de6cd664d4150a460a612489c0d39fe29d77f54661f8014087ebeeec63271"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"name\": \"ERR\",\r\n\"email\": \"{{$randomEmail}}\",\r\n\"gender\": \"female\",\r\n\"status\": \"active\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/users"
+					},
+					"response": []
+				},
+				{
+					"name": "Create user  negative bad body format",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "acac8f6d-a5ea-4469-a193-fa98b0626bf1",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "82e3b56e-35a3-4ccf-90ca-3a8a9e54c0ac",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Verify body Error\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"       pm.expect(jsonData.message).to.eql(\"Authentication failed\");\r",
+									" });\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "3595c9cf-f60f-452d-9f83-c424657fdd2a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "c12de6cd664d4150a460a612489c0d39fe29d77f54661f8014087ebeeec63271"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"name\": \"ERR\",\r\n\"email\": \"{{$randomEmail}}\",\r\n\"gender\": female\",\r\n\"status\": \"active\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/users"
+					},
+					"response": []
+				},
+				{
+					"name": "Verify  user Created",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6ffff552-315e-4165-adb5-fae717db7854",
+								"exec": [
+									"const userId= pm.collectionVariables.get(\"userId\")\r",
+									"pm.test(\"Your test name\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id).to.eql(userId);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "92b9f8c3-89b0-4fff-9faa-8a393fb7673e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/users/{{userId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Create user  duplicate email negative",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "acac8f6d-a5ea-4469-a193-fa98b0626bf1",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "82e3b56e-35a3-4ccf-90ca-3a8a9e54c0ac",
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.eql(422);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Verify Email duplicate error\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[0].field).to.eql(\"email\");\r",
+									"    pm.expect(jsonData[0].message).to.eql(\"has already been taken\");\r",
+									"    \r",
+									" });\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "3d2e27e4-b30f-4caf-b530-7226e06ff282",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "c12de6cd664d4150a460a612489c0d39fe29d77f54661f8014087ebeeec63271"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"name\": \"ERR\",\r\n\"email\": \"Ruthe_OConnell@hotmail.com\",\r\n\"gender\": \"female\",\r\n\"status\": \"active\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/users"
+					},
+					"response": []
+				},
+				{
+					"name": "Status blank negative",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "acac8f6d-a5ea-4469-a193-fa98b0626bf1",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "82e3b56e-35a3-4ccf-90ca-3a8a9e54c0ac",
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.eql(422);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Verify  status Error\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[0].field).to.eql(\"status\");\r",
+									"    pm.expect(jsonData[0].message).to.eql(\"can't be blank\");\r",
+									"    \r",
+									" });\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "0481f1b6-ea41-4348-a5ab-7dce9df04c96",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "c12de6cd664d4150a460a612489c0d39fe29d77f54661f8014087ebeeec63271"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"name\": \"Name\",\r\n\"email\": \"{{$randomEmail}}\",\r\n\"gender\": \"female\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/users"
+					},
+					"response": []
+				},
+				{
+					"name": "Gender negative",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "acac8f6d-a5ea-4469-a193-fa98b0626bf1",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "82e3b56e-35a3-4ccf-90ca-3a8a9e54c0ac",
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.eql(422);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Verify Gender different to  male of female\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[0].field).to.eql(\"gender\");\r",
+									"    pm.expect(jsonData[0].message).to.eql(\"can't be blank, can be male of female\");\r",
+									"    \r",
+									" });\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "70eaa9f0-21cb-49b2-9098-5df1bcc8521f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "c12de6cd664d4150a460a612489c0d39fe29d77f54661f8014087ebeeec63271"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"name\": \"ERR\",\r\n\"email\": \"{{$randomEmail}}\",\r\n\"gender\": \"no binary\",\r\n\"status\": \"active\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/users"
+					},
+					"response": []
+				},
+				{
+					"name": "Empty Body Json Negative",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "acac8f6d-a5ea-4469-a193-fa98b0626bf1",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "82e3b56e-35a3-4ccf-90ca-3a8a9e54c0ac",
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.eql(422);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Verify emty body Error\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData[0].field).to.eql(\"email\");\r",
+									"    pm.expect(jsonData[0].message).to.eql(\"can't be blank\");\r",
+									"    pm.expect(jsonData[1].field).to.eql(\"name\");\r",
+									"    pm.expect(jsonData[1].message).to.eql(\"can't be blank\");\r",
+									"    pm.expect(jsonData[2].field).to.eql(\"gender\");\r",
+									"    pm.expect(jsonData[2].message).to.eql(\"can't be blank, can be male of female\");\r",
+									"    pm.expect(jsonData[3].field).to.eql(\"status\");\r",
+									"    pm.expect(jsonData[3].message).to.eql(\"can't be blank\");\r",
+									"      \r",
+									" });\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "152dbada-3855-430c-9d4d-ae2e540c593e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "c12de6cd664d4150a460a612489c0d39fe29d77f54661f8014087ebeeec63271"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/users"
+					},
+					"response": []
+				}
+			],
+			"_postman_id": "b8f5e1ea-5acd-4087-bb95-ee5c2bcee07c",
+			"auth": {
+				"type": "bearer",
+				"bearer": {
+					"token": "c12de6cd664d4150a460a612489c0d39fe29d77f54661f8014087ebeeec63271"
+				}
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "12901935-2c77-4782-9fae-fa66b9148b57",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "d7aaf809-3323-40f5-b139-cc36a373fa78",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "PUT",
+			"item": [
+				{
+					"name": "Created user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e47e00a6-7d51-4774-8334-a4085d1f913f",
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"pm.collectionVariables.set(\"userId\", jsonData.id);\r",
+									"pm.collectionVariables.set(\"randomEmail\",jsonData.email);\r",
+									"console.log(jsonData.email)\r",
+									"pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "d104138b-4c84-4f8f-887d-7d15e1309b89",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"name\": \"User to Update\",\r\n\"email\": \"{{$randomEmail}}\",\r\n\"gender\": \"female\",\r\n\"status\": \"active\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/users"
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c7a83740-eff6-4d12-8b66-3d45c7f2717a",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"var jsonData = pm.response.json();\r",
+									"pm.collectionVariables.set(\"userId\", jsonData.id);\r",
+									"pm.collectionVariables.set(\"randomEmail\",jsonData.email);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "aca17fb4-fad4-4017-a9c6-9c484d1ea153",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"name\": \"Name Updated\",\r\n\"gender\": \"male\",\r\n\"status\": \"inactive\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/users/{{userId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Verify user was  Modified",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a3c981a5-0373-48a0-875e-5ffeca07d797",
+								"exec": [
+									"const id = pm.collectionVariables.get(\"userId\");\r",
+									"const email = pm.collectionVariables.get(\"randomEmail\");\r",
+									"console.log(email);\r",
+									"pm.test(\"verify data is updated\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.id).to.eql(id);\r",
+									"    pm.expect(jsonData.name).to.eql(\"Name Updated\");\r",
+									"    pm.expect(jsonData.email).to.eql(email);\r",
+									"    pm.expect(jsonData.gender).to.eql(\"male\");\r",
+									"    pm.expect(jsonData.status).to.eql(\"inactive\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "7f31706a-fc89-4054-b386-ca14b2d2d037",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/users/{{userId}}"
+					},
+					"response": []
+				}
+			],
+			"_postman_id": "0b091758-91ec-4fe0-8b1d-2cf919a33f2d"
+		},
+		{
+			"name": "DELETE",
+			"item": [
+				{
+					"name": "Created user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2ff4463a-5bb0-4985-999e-24d01cbbfaf7",
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"pm.collectionVariables.set(\"userId\", jsonData.id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "3a1e23b5-e500-4aea-8a2a-c6694a95c6a3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"name\": \"User to Update\",\r\n\"email\": \"{{$randomEmail}}\",\r\n\"gender\": \"female\",\r\n\"status\": \"active\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/users"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f18b01ed-643e-4c3b-80ce-3e6aabadff2b",
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"    pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "a0691597-e97e-42e9-aff1-8f33aed80772",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseUrl}}/users/{{userId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Verify user was delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "be8d55ee-c8b6-417b-8862-70b87574025d",
+								"exec": [
+									"pm.test(\"Your test name\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.message).to.eql(\"Resource not found\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"_postman_id": "3e550ffa-bf20-4080-b3b3-b098ed41dc3a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/users/{{userId}}"
+					},
+					"response": []
+				}
+			],
+			"_postman_id": "5a798930-16c4-4800-b62b-61e2ea7cfc3f"
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": {
+			"token": "c12de6cd664d4150a460a612489c0d39fe29d77f54661f8014087ebeeec63271"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "b661ed94-12a4-421b-b181-b6978b4da783",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "f579f1d4-9cb0-4fa7-b78d-ffab5f5d9884",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "c7d8780d-d91b-4bc5-b8d7-f673eeadf212",
+			"key": "name",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "d03565b7-f81b-49cd-9ed0-f3d3afca04b9",
+			"key": "id",
+			"value": "xxx",
+			"type": "string"
+		},
+		{
+			"id": "c2447ab9-3303-4ee4-9674-77f83cf75a89",
+			"key": "email",
+			"value": "xx",
+			"type": "string"
+		},
+		{
+			"id": "5b36f8fd-9a09-4db0-bad7-f2fa0cae17fa",
+			"key": "gender",
+			"value": "xx",
+			"type": "string"
+		},
+		{
+			"id": "3210ca68-34f4-4460-b93a-c4510a07b4da",
+			"key": "status",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "bf0c02a4-1f7a-4bd7-98c9-bcb28db290cb",
+			"key": "randomEmail",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "b6b07559-43fc-4560-8ddf-6fecf7ef9b41",
+			"key": "userId",
+			"value": "x",
+			"type": "string"
+		}
+	]
+}
